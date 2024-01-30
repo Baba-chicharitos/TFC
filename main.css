@@ -1,0 +1,1907 @@
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body 
+{
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Nav ***********************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************/
+
+nav 
+{
+    display: flex;
+    height: 12vh;
+    background-color: rgb(190, 82, 190);
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+::-webkit-scrollbar 
+{
+    display: none; /* Masquer la scrollbar sur Chrome, Safari et Opera */
+}
+
+nav img 
+{
+    position: absolute;
+    top: 6vh;
+    left: 21.875vw;
+    height: 12vh;
+    transform: translate(-50%, -50%);
+}
+
+.polygon-left 
+{
+    position: absolute;
+    left: 0;
+    height: 12vh;
+    width: 25vw;
+    background-color: #38284E;
+    clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+h1 
+{
+    color: #38284E;
+}
+
+.text-gold 
+{
+    position: absolute;
+    display: flex;
+    top: 6vh;
+    left: 78.17vw;
+    height: 12vh;
+    width: 8vw;
+    color: aliceblue;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.top-left 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.mid 
+{
+    position: absolute;
+    top: 6.2vh;
+    left: 4vw;
+    transform: translate(-50%, -50%);
+}
+
+.bot-right 
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.gold 
+{
+    font-size: 1.3rem;
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.polygon-right 
+{
+    position: absolute;
+    right: 0;
+    height: 12vh;
+    width: 25vw;
+    background-color: #38284E;
+    clip-path: polygon(25% 0%, 0% 100%, 100% 100%, 100% 0%);
+}
+
+/* contenue total ***********************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************/
+
+.content-joueur 
+{
+    width: 100%;
+    height: 88vh;
+}
+
+/* conteneur kone ***********************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************/
+
+.content-joueur .kone 
+{
+    display: flex;
+    width: 100%;
+    height: 88vh;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.content-joueur .kone .gauche 
+{
+    position: absolute;
+    display: flex;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-joueur .kone .gauche .card 
+{
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 35vh;
+  width: 12vw;
+  border-radius: 20px;
+  transition: all 0.5s;
+  background-color: transparent;
+}
+
+.content-joueur .kone .gauche .card:hover 
+{
+    height: 35vh;
+    width: 45vw;
+    border-radius: 20px;
+}
+
+.content-joueur .kone .gauche .card .circle 
+{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.content-joueur .kone .gauche .card .circle::before 
+{
+  content: '';
+  position: absolute;
+  background-color: rgb(190, 82, 190);
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  clip-path: circle(6vw at center);
+  transition: all 0.5s;
+}
+
+.content-joueur .kone .gauche .card:hover .circle::before 
+{
+    clip-path: circle(45vw at center);
+    background-color: #38284E;
+}
+
+.content-joueur .kone .gauche .card img 
+{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12vw;
+    height: auto;
+    pointer-events: none;
+    transition: all 0.5s;
+}
+
+.content-joueur .kone .gauche .card:hover img 
+{
+    left: 85%;
+    width: 15vw;
+}
+
+.content-joueur .kone .gauche .card .desc 
+{
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 31.5vw;
+    padding-left: 15px;
+    padding-top: 8px;
+    padding-bottom: 3px;
+    opacity: 0;
+    transition: 0.1s ease-in;
+    color: white;
+    overflow: hidden;
+}
+
+.content-joueur .kone .gauche .card:hover .desc 
+{
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 1;
+    z-index: 1;
+    transition: 1.5s;
+}
+
+.content-joueur .kone .gauche .card .desc h1 
+{
+    font-family: 'Lato', sans-serif;
+    opacity: 1;
+    transition: all 0.5s;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  
+.content-joueur .kone .gauche .card .desc span 
+{
+    opacity: 1;
+    transition: all 10s;
+    pointer-events: none;
+}
+  
+.content-joueur .kone .gauche .card .desc p 
+{
+    opacity: 1;
+    transition: all 0.5s;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.content-joueur .kone .gauche h3
+{
+    font-size: 3rem;
+    color: red;
+    position: absolute;
+    top: 5%;
+    text-decoration: underline;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.content-joueur .kone .droite 
+{
+    width: 50%;
+    height: 100%;
+    position: absolute; 
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.content-joueur .kone .droite img 
+{
+    height: 35vh;
+    width: 35vw;
+    border-radius: 12px;
+}
+
+/* image de fond ***********************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************/
+
+.content-joueur .kone .fond1 
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    filter: blur(4px);
+}
+
+.content-joueur .kone .fond-flou
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    background-color: #BD65C5;
+    opacity: 0.4;
+}
+
+/* Ben yedder ***********************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************/
+
+.content-joueur .beny
+{
+    display: flex;
+    width: 100%;
+    height: 88vh;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.content-joueur .beny .fond1
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    filter: blur(4px);
+}
+
+.content-joueur .beny .fond-flou
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    background-color: #BD65C5;
+    opacity: 0.4;
+}
+
+.content-joueur .beny .gauche
+{
+    position: absolute;
+    display: flex;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-joueur .beny .gauche .card 
+{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 35vh;
+  width: 12vw;
+  border-radius: 20px;
+  transition: all 0.5s;
+  background-color: transparent;
+}
+
+.content-joueur .beny .gauche .card:hover 
+{
+    height: 35vh;
+    width: 45vw;
+    border-radius: 20px;
+}
+
+.content-joueur .beny .gauche .card .circle 
+{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.content-joueur .beny .gauche .card .circle::before 
+{
+  content: '';
+  position: absolute;
+  background-color: rgb(190, 82, 190);
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  clip-path: circle(80px at center);
+  transition: all 0.5s;
+}
+
+.content-joueur .beny .gauche .card:hover .circle::before 
+{
+    clip-path: circle(45vw at center);
+    background-color: #38284E;
+}
+
+.content-joueur .beny .gauche .card img 
+{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12vw;
+    height: auto;
+    pointer-events: none;
+    transition: all 0.5s;
+}
+
+.content-joueur .beny .gauche .card:hover img 
+{
+    left: 15%;
+    width: 15vw;
+}
+
+.content-joueur .beny .gauche .card .desc 
+{
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 31.5vw;
+    padding-left: 15px;
+    padding-top: 8px;
+    padding-bottom: 3px;
+    opacity: 0;
+    transition: 0.1s ease-in;
+    color: white;
+    overflow: hidden;
+}
+
+.content-joueur .beny .gauche .card:hover .desc 
+{
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 1;
+    z-index: 1;
+    transition: 1.5s;
+}
+
+.content-joueur .beny .gauche .card .desc h1 
+{
+    font-family: 'Lato', sans-serif;
+    opacity: 1;
+    transition: all 0.5s;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  
+.content-joueur .beny .gauche .card .desc span 
+{
+    opacity: 1;
+    transition: all 10s;
+    pointer-events: none;
+}
+  
+.content-joueur .beny .gauche .card .desc p 
+{
+    opacity: 1;
+    transition: all 0.5s;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.content-joueur .beny .gauche h3 
+{
+    font-size: 3rem;
+    color: red;
+    position: absolute;
+    top: 5%;
+    text-decoration: underline;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.content-joueur .beny .droite 
+{
+    width: 50%;
+    height: 100%;
+    position: absolute; 
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.content-joueur .beny .droite img 
+{
+    height: 35vh;
+    width: 35vw;
+    border-radius: 12px;
+}
+
+/* Adli ***********************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************/
+
+.content-joueur .adli 
+{
+    display: flex;
+    width: 100%;
+    height: 88vh;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.content-joueur .adli .gauche 
+{
+    position: absolute;
+    display: flex;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-joueur .adli .gauche .card 
+{
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 35vh;
+  width: 12vw;
+  border-radius: 20px;
+  transition: all 0.5s;
+  background-color: transparent;
+}
+
+.content-joueur .adli .gauche .card:hover 
+{
+    height: 35vh;
+    width: 45vw;
+    border-radius: 20px;
+}
+
+.content-joueur .adli .gauche .card .circle 
+{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.content-joueur .adli .gauche .card .circle::before 
+{
+  content: '';
+  position: absolute;
+  background-color: rgb(190, 82, 190);
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  clip-path: circle(80px at center);
+  transition: all 0.5s;
+}
+
+.content-joueur .adli .gauche .card:hover .circle::before 
+{
+    clip-path: circle(45vw at center);
+    background-color: #38284E;
+}
+
+.content-joueur .adli .gauche .card img 
+{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15vw;
+    height: auto;
+    pointer-events: none;
+    transition: all 0.5s;
+}
+
+.content-joueur .adli .gauche .card:hover img 
+{
+    left: 85%;
+    width: 18vw;
+}
+
+.content-joueur .adli .gauche .card .desc 
+{
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 31.5vw;
+    padding-left: 15px;
+    padding-top: 8px;
+    padding-bottom: 3px;
+    opacity: 0;
+    transition: 0.1s ease-in;
+    color: white;
+    overflow: hidden;
+}
+
+.content-joueur .adli .gauche .card:hover .desc 
+{
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 1;
+    z-index: 1;
+    transition: 1.5s;
+}
+
+.content-joueur .adli .gauche .card .desc h1 
+{
+    font-family: 'Lato', sans-serif;
+    opacity: 1;
+    transition: all 0.5s;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  
+.content-joueur .adli .gauche .card .desc span 
+{
+    opacity: 1;
+    transition: all 10s;
+    pointer-events: none;
+}
+  
+.content-joueur .adli .gauche .card .desc p 
+{
+    opacity: 1;
+    transition: all 0.5s;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.content-joueur .adli .gauche h3
+{
+    font-size: 3rem;
+    color: red;
+    position: absolute;
+    top: 5%;
+    text-decoration: underline;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.content-joueur .adli .droite 
+{
+    width: 50%;
+    height: 100%;
+    position: absolute; 
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.content-joueur .adli .droite img 
+{
+    height: 35vh;
+    width: 35vw;
+    border-radius: 12px;
+}
+
+.content-joueur .adli .fond1 
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    filter: blur(4px);
+}
+
+.content-joueur .adli .fond-flou
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    background-color: #BD65C5;
+    opacity: 0.4;
+}
+
+/* Todibo ***********************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************/
+
+.content-joueur .todibo
+{
+    display: flex;
+    width: 100%;
+    height: 88vh;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.content-joueur .todibo .fond1
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    filter: blur(4px);
+}
+
+.content-joueur .todibo .fond-flou
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    background-color: #BD65C5;
+    opacity: 0.4;
+}
+
+.content-joueur .todibo .gauche
+{
+    position: absolute;
+    display: flex;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-joueur .todibo .gauche .card 
+{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 35vh;
+  width: 12vw;
+  border-radius: 20px;
+  transition: all 0.5s;
+  background-color: transparent;
+}
+
+.content-joueur .todibo .gauche .card:hover 
+{
+    height: 35vh;
+    width: 45vw;
+    border-radius: 20px;
+}
+
+.content-joueur .todibo .gauche .card .circle 
+{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.content-joueur .todibo .gauche .card .circle::before 
+{
+  content: '';
+  position: absolute;
+  background-color: rgb(190, 82, 190);
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  clip-path: circle(80px at center);
+  transition: all 0.5s;
+}
+
+.content-joueur .todibo .gauche .card:hover .circle::before 
+{
+    clip-path: circle(45vw at center);
+    background-color: #38284E;
+}
+
+.content-joueur .todibo .gauche .card img 
+{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12vw;
+    height: auto;
+    pointer-events: none;
+    transition: all 0.5s;
+}
+
+.content-joueur .todibo .gauche .card:hover img 
+{
+    left: 15%;
+    width: 15vw;
+}
+
+.content-joueur .todibo .gauche .card .desc 
+{
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 31.5vw;
+    padding-left: 15px;
+    padding-top: 8px;
+    padding-bottom: 3px;
+    opacity: 0;
+    transition: 0.1s ease-in;
+    color: white;
+    overflow: hidden;
+}
+
+.content-joueur .todibo .gauche .card:hover .desc 
+{
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 1;
+    z-index: 1;
+    transition: 1.5s;
+}
+
+.content-joueur .todibo .gauche .card .desc h1 
+{
+    font-family: 'Lato', sans-serif;
+    opacity: 1;
+    transition: all 0.5s;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  
+.content-joueur .todibo .gauche .card .desc span 
+{
+    opacity: 1;
+    transition: all 10s;
+    pointer-events: none;
+}
+
+.content-joueur .todibo .gauche .card .desc p 
+{
+    opacity: 1;
+    transition: all 0.5s;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.content-joueur .todibo .gauche h3 
+{
+    font-size: 3rem;
+    color: red;
+    position: absolute;
+    top: 5%;
+    text-decoration: underline;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.content-joueur .todibo .droite 
+{
+    width: 50%;
+    height: 100%;
+    position: absolute; 
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.content-joueur .todibo .droite img 
+{
+    height: 35vh;
+    width: 35vw;
+    border-radius: 12px;
+}
+
+/* Lafont ***********************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************/
+
+.content-joueur .lafont 
+{
+    display: flex;
+    width: 100%;
+    height: 88vh;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.content-joueur .lafont .gauche 
+{
+    position: absolute;
+    display: flex;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-joueur .lafont .gauche .card 
+{
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 35vh;
+  width: 12vw;
+  border-radius: 20px;
+  transition: all 0.5s;
+  background-color: transparent;
+}
+
+.content-joueur .lafont .gauche .card:hover 
+{
+    height: 35vh;
+    width: 45vw;
+    border-radius: 20px;
+}
+
+.content-joueur .lafont .gauche .card .circle 
+{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.content-joueur .lafont .gauche .card .circle::before 
+{
+  content: '';
+  position: absolute;
+  background-color: rgb(190, 82, 190);
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  clip-path: circle(80px at center);
+  transition: all 0.5s;
+}
+
+.content-joueur .lafont .gauche .card:hover .circle::before 
+{
+    clip-path: circle(45vw at center);
+    background-color: #38284E;
+}
+
+.content-joueur .lafont .gauche .card img 
+{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12vw;
+    height: auto;
+    pointer-events: none;
+    transition: all 0.5s;
+}
+
+.content-joueur .lafont .gauche .card:hover img 
+{
+    left: 85%;
+    width: 15vw;
+}
+
+.content-joueur .lafont .gauche .card .desc 
+{
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 31.5vw;
+    padding-left: 15px;
+    padding-top: 8px;
+    padding-bottom: 3px;
+    opacity: 0;
+    transition: 0.1s ease-in;
+    color: white;
+    overflow: hidden;
+}
+
+.content-joueur .lafont .gauche .card:hover .desc 
+{
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 1;
+    z-index: 1;
+    transition: 1.5s;
+}
+
+.content-joueur .lafont .gauche .card .desc h1 
+{
+    font-family: 'Lato', sans-serif;
+    opacity: 1;
+    transition: all 0.5s;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  
+.content-joueur .lafont .gauche .card .desc span 
+{
+    opacity: 1;
+    transition: all 10s;
+    pointer-events: none;
+}
+  
+.content-joueur .lafont .gauche .card .desc p 
+{
+    opacity: 1;
+    transition: all 0.5s;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.content-joueur .lafont .gauche h3
+{
+    font-size: 3rem;
+    color: red;
+    position: absolute;
+    top: 5%;
+    text-decoration: underline;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.content-joueur .lafont .droite 
+{
+    width: 50%;
+    height: 100%;
+    position: absolute; 
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.content-joueur .lafont .droite img 
+{
+    height: 35vh;
+    width: 35vw;
+    border-radius: 12px;
+}
+
+.content-joueur .lafont .fond1 
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    filter: blur(4px);
+}
+
+.content-joueur .lafont .fond-flou
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    background-color: #BD65C5;
+    opacity: 0.4;
+}
+
+/* Sissoko ***********************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************/
+
+.content-joueur .sissoko
+{
+    display: flex;
+    width: 100%;
+    height: 88vh;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.content-joueur .sissoko .fond1
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    filter: blur(4px);
+}
+
+.content-joueur .sissoko .fond-flou
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    background-color: #BD65C5;
+    opacity: 0.4;
+}
+
+.content-joueur .sissoko .gauche
+{
+    position: absolute;
+    display: flex;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-joueur .sissoko .gauche .card 
+{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 35vh;
+  width: 12vw;
+  border-radius: 20px;
+  transition: all 0.5s;
+  background-color: transparent;
+}
+
+.content-joueur .sissoko .gauche .card:hover 
+{
+    height: 35vh;
+    width: 45vw;
+    border-radius: 20px;
+}
+
+.content-joueur .sissoko .gauche .card .circle 
+{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.content-joueur .sissoko .gauche .card .circle::before 
+{
+  content: '';
+  position: absolute;
+  background-color: rgb(190, 82, 190);
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  clip-path: circle(80px at center);
+  transition: all 0.5s;
+}
+
+.content-joueur .sissoko .gauche .card:hover .circle::before 
+{
+    clip-path: circle(45vw at center);
+    background-color: #38284E;
+}
+
+.content-joueur .sissoko .gauche .card img 
+{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12vw;
+    height: auto;
+    pointer-events: none;
+    transition: all 0.5s;
+}
+
+.content-joueur .sissoko .gauche .card:hover img 
+{
+    left: 15%;
+    width: 15vw;
+}
+
+.content-joueur .sissoko .gauche .card .desc 
+{
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 31.5vw;
+    padding-left: 15px;
+    padding-top: 8px;
+    padding-bottom: 3px;
+    opacity: 0;
+    transition: 0.1s ease-in;
+    color: white;
+    overflow: hidden;
+}
+
+.content-joueur .sissoko .gauche .card:hover .desc 
+{
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 1;
+    z-index: 1;
+    transition: 1.5s;
+}
+
+.content-joueur .sissoko .gauche .card .desc h1 
+{
+    font-family: 'Lato', sans-serif;
+    opacity: 1;
+    transition: all 0.5s;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  
+.content-joueur .sissoko .gauche .card .desc span 
+{
+    opacity: 1;
+    transition: all 10s;
+    pointer-events: none;
+}
+
+.content-joueur .sissoko .gauche .card .desc p 
+{
+    opacity: 1;
+    transition: all 0.5s;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.content-joueur .sissoko .gauche h3 
+{
+    font-size: 3rem;
+    color: red;
+    position: absolute;
+    top: 5%;
+    text-decoration: underline;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.content-joueur .sissoko .droite 
+{
+    width: 50%;
+    height: 100%;
+    position: absolute; 
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.content-joueur .sissoko .droite img 
+{
+    height: 35vh;
+    width: 35vw;
+    border-radius: 12px;
+}
+
+/* Meadia querrys ***********************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************/
+
+@media screen and (max-width: 991px) 
+{
+    nav{
+        height: 6vh;
+        width: 100vw;
+        text-align: center;
+        background-color: #38284E;
+        justify-content: flex-start;
+    }
+
+    nav h1 
+    {
+        color: #BD65C5;
+        font-size: 4.3vw;
+    }
+    
+    nav img 
+    {
+        width: 8vw;
+        transform: translate(0,0);
+        height: auto;
+        position: static;
+        margin: 10px;
+    }
+
+    .polygon-left 
+    {
+        display: none;
+    }
+
+    .polygon-right 
+    {
+        display: none;
+    }
+
+    nav span 
+    {
+        display: none;
+    }
+
+    .content-joueur .kone 
+    {
+        height: 130vh;
+        flex-direction: column;
+    }
+
+    .content-joueur .kone .gauche 
+    {
+        height: 65vh;
+        width: 100%;
+        position: static;
+    }
+
+    .content-joueur .kone .gauche .card:hover
+    {
+        width: 70%;
+        height: 50vh;
+    }
+
+    .content-joueur .kone .gauche .card .circle::before 
+    {
+        clip-path: circle(25vw at center);
+    }
+
+    .content-joueur .kone .gauche .card
+    {
+        align-items: baseline;
+        width: 50vw;
+    }
+
+    .content-joueur .kone .gauche .card img 
+    {
+        width: 40vw;
+        height: auto;
+    }
+
+    .content-joueur .kone .gauche .card:hover img 
+    {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+    }
+
+    .content-joueur .kone .gauche .card:hover .circle::before 
+    {
+        clip-path: circle(1000px at center);
+        background-color: #38284E;
+    }       
+
+    .content-joueur .kone .gauche h3
+    {
+        top: 0%;
+    }
+
+    .content-joueur .kone .gauche .card .desc 
+    {
+        height: 70%;
+        width: 100%;
+        padding-right: 15px;
+    }   
+
+    .content-joueur .kone .droite 
+    {
+        height: 65vh;
+        position: static;
+    }
+
+    .content-joueur .kone .droite img 
+    {
+        width: 80vw;
+        height: 40%;
+        z-index: 20;
+    }
+
+    .content-joueur .kone .fond1 
+    {
+        display: none;
+    }
+
+    /****************************************************************************/
+
+    .content-joueur .beny 
+    {
+        height: 130vh;
+        flex-direction: column;
+    }
+
+    .content-joueur .beny .gauche 
+    {
+        height: 65vh;
+        width: 100%;
+        position: static;
+    }
+
+    .content-joueur .beny .gauche .card:hover
+    {
+        width: 70%;
+        height: 50vh;
+    }
+
+    .content-joueur .beny .gauche .card .circle::before 
+    {
+        clip-path: circle(25vw at center);
+    }
+
+    .content-joueur .beny .gauche .card
+    {
+        align-items: baseline;
+        width: 50vw;
+    }
+
+    .content-joueur .beny .gauche .card img 
+    {
+        width: 40vw;
+        height: auto;
+    }
+
+    .content-joueur .beny .gauche .card:hover img 
+    {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+    }
+
+    .content-joueur .beny .gauche .card:hover .circle::before 
+    {
+        clip-path: circle(1000px at center);
+        background-color: #38284E;
+    }       
+
+    .content-joueur .beny .gauche h3
+    {
+        top: 0%;
+    }
+
+    .content-joueur .beny .gauche .card .desc 
+    {
+        height: 70%;
+        width: 100%;
+        padding-right: 15px;
+    }   
+
+    .content-joueur .beny .droite 
+    {
+        height: 65vh;
+        position: static;
+    }
+
+    .content-joueur .beny .droite img 
+    {
+        width: 80vw;
+        height: 40%;
+        z-index: 20;
+    }
+
+    .content-joueur .beny .fond1 
+    {
+        display: none;
+    }
+
+    /****************************************************************************/
+
+    .content-joueur .adli 
+    {
+        height: 130vh;
+        flex-direction: column;
+    }
+
+    .content-joueur .adli .gauche 
+    {
+        height: 65vh;
+        width: 100%;
+        position: static;
+    }
+
+    .content-joueur .adli .gauche .card:hover
+    {
+        width: 70%;
+        height: 50vh;
+    }
+
+    .content-joueur .adli .gauche .card .circle::before 
+    {
+        clip-path: circle(25vw at center);
+    }
+
+    .content-joueur .adli .gauche .card
+    {
+        align-items: baseline;
+        width: 50vw;
+    }
+
+    .content-joueur .adli .gauche .card img 
+    {
+        width: 40vw;
+        height: auto;
+    }
+
+    .content-joueur .adli .gauche .card:hover img 
+    {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+    }
+
+    .content-joueur .adli .gauche .card:hover .circle::before 
+    {
+        clip-path: circle(1000px at center);
+        background-color: #38284E;
+    }       
+
+    .content-joueur .adli .gauche h3
+    {
+        top: 0%;
+    }
+
+    .content-joueur .adli .gauche .card .desc 
+    {
+        height: 70%;
+        width: 100%;
+        padding-right: 15px;
+    }   
+
+    .content-joueur .adli .droite 
+    {
+        height: 65vh;
+        position: static;
+    }
+
+    .content-joueur .adli .droite img 
+    {
+        width: 80vw;
+        height: 40%;
+        z-index: 20;
+    }
+
+    .content-joueur .adli .fond1 
+    {
+        display: none;
+    }
+
+    /****************************************************************************/
+
+    .content-joueur .todibo 
+    {
+        height: 130vh;
+        flex-direction: column;
+    }
+
+    .content-joueur .todibo .gauche 
+    {
+        height: 65vh;
+        width: 100%;
+        position: static;
+    }
+
+    .content-joueur .todibo .gauche .card:hover
+    {
+        width: 70%;
+        height: 50vh;
+    }
+
+    .content-joueur .todibo .gauche .card .circle::before 
+    {
+        clip-path: circle(25vw at center);
+    }
+
+    .content-joueur .todibo .gauche .card
+    {
+        align-items: baseline;
+        width: 50vw;
+    }
+
+    .content-joueur .todibo .gauche .card img 
+    {
+        width: 40vw;
+        height: auto;
+    }
+
+    .content-joueur .todibo .gauche .card:hover img 
+    {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+    }
+
+    .content-joueur .todibo .gauche .card:hover .circle::before 
+    {
+        clip-path: circle(1000px at center);
+        background-color: #38284E;
+    }       
+
+    .content-joueur .todibo .gauche h3
+    {
+        top: 0%;
+    }
+
+    .content-joueur .todibo .gauche .card .desc 
+    {
+        height: 70%;
+        width: 100%;
+        padding-right: 15px;
+    }   
+
+    .content-joueur .todibo .droite 
+    {
+        height: 65vh;
+        position: static;
+    }
+
+    .content-joueur .todibo .droite img 
+    {
+        width: 80vw;
+        height: 40%;
+        z-index: 20;
+    }
+
+    .content-joueur .todibo .fond1 
+    {
+        display: none;
+    }
+
+    /****************************************************************************/
+
+    .content-joueur .lafont 
+    {
+        height: 130vh;
+        flex-direction: column;
+    }
+
+    .content-joueur .lafont .gauche 
+    {
+        height: 65vh;
+        width: 100%;
+        position: static;
+    }
+
+    .content-joueur .lafont .gauche .card:hover
+    {
+        width: 70%;
+        height: 50vh;
+    }
+
+    .content-joueur .lafont .gauche .card .circle::before 
+    {
+        clip-path: circle(25vw at center);
+    }
+
+    .content-joueur .lafont .gauche .card
+    {
+        align-items: baseline;
+        width: 50vw;
+    }
+
+    .content-joueur .lafont .gauche .card img 
+    {
+        width: 40vw;
+        height: auto;
+    }
+
+    .content-joueur .lafont .gauche .card:hover img 
+    {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+    }
+
+    .content-joueur .lafont .gauche .card:hover .circle::before 
+    {
+        clip-path: circle(1000px at center);
+        background-color: #38284E;
+    }       
+
+    .content-joueur .lafont .gauche h3
+    {
+        top: 0%;
+    }
+
+    .content-joueur .lafont .gauche .card .desc 
+    {
+        height: 70%;
+        width: 100%;
+        padding-right: 15px;
+    }   
+
+    .content-joueur .lafont .droite 
+    {
+        height: 65vh;
+        position: static;
+    }
+
+    .content-joueur .lafont .droite img 
+    {
+        width: 80vw;
+        height: 40%;
+        z-index: 20;
+    }
+
+    .content-joueur .lafont .fond1 
+    {
+        display: none;
+    }
+
+    /****************************************************************************/
+
+    .content-joueur .sissoko 
+    {
+        height: 130vh;
+        flex-direction: column;
+    }
+
+    .content-joueur .sissoko .gauche 
+    {
+        height: 65vh;
+        width: 100%;
+        position: static;
+    }
+
+    .content-joueur .sissoko .gauche .card:hover
+    {
+        width: 70%;
+        height: 50vh;
+    }
+
+    .content-joueur .sissoko .gauche .card .circle::before 
+    {
+        clip-path: circle(25vw at center);
+    }
+
+    .content-joueur .sissoko .gauche .card
+    {
+        align-items: baseline;
+        width: 50vw;
+    }
+
+    .content-joueur .sissoko .gauche .card img 
+    {
+        width: 40vw;
+        height: auto;
+    }
+
+    .content-joueur .sissoko .gauche .card:hover img 
+    {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+    }
+
+    .content-joueur .sissoko .gauche .card:hover .circle::before 
+    {
+        clip-path: circle(1000px at center);
+        background-color: #38284E;
+    }       
+
+    .content-joueur .sissoko .gauche h3
+    {
+        top: 0%;
+    }
+
+    .content-joueur .sissoko .gauche .card .desc 
+    {
+        height: 70%;
+        width: 100%;
+        padding-right: 15px;
+    }   
+
+    .content-joueur .sissoko .droite 
+    {
+        height: 65vh;
+        position: static;
+    }
+
+    .content-joueur .sissoko .droite img 
+    {
+        width: 80vw;
+        height: 40%;
+        z-index: 20;
+    }
+
+    .content-joueur .sissoko .fond1 
+    {
+        display: none;
+    }
+}
